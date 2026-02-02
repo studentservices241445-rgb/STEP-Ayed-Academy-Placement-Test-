@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<title>اختبار تحديد المستوى (50 سؤال) | أكاديمية عايد الرسمية</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="theme-color" content="#F6C343"/>
+  <meta name="description" content="اختبار تدريبي قوي + تصحيح وشرح + تحليل + خطة وجدول مذاكرة PDF."/>
+  <meta property="og:title" content="اختبار تحديد مستوى STEP (50 سؤال)"/>
+  <meta property="og:description" content="اختبار تدريبي قوي + تصحيح وشرح + تحليل + خطة وجدول مذاكرة PDF."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image" content="./assets/icon-512.png"/>
+  <link rel="manifest" href="./manifest.json"/>
+  <link rel="icon" type="image/png" href="./assets/icon-192.png"/>
+  <link rel="apple-touch-icon" href="./assets/icon-192.png"/>
+  <link rel="stylesheet" href="./assets/styles.css"/>
+
+</head>
+<body data-page="test">
+<a class="skip-link" href="#main">تخطي إلى المحتوى</a>
+
+<header class="header">
+  <div class="container header-inner">
+    <a class="brand" href="./index.html" aria-label="العودة للرئيسية">
+      <div class="brand-mark"><svg viewBox="0 0 24 24" aria-hidden="true">
+  <path class="icon" d="M7 17c4-8 6-10 10-10M7 17c2 0 4 2 6 2 4 0 6-4 6-8"/>
+</svg></div>
+      <div class="brand-title">
+        <b>أكاديمية عايد الرسمية</b>
+        <span>برنامج تحديد مستوى STEP</span>
+      </div>
+    </a>
+
+    <nav class="nav" aria-label="روابط الموقع">
+      <a data-nav href="./index.html">الرئيسية</a>
+      <a data-nav href="./test.html">اختبار 50 سؤال</a>
+      <a data-nav href="./results.html">النتيجة والخطة</a>
+      <a data-nav href="./quiz.html">كويزات</a>
+      <a data-nav href="./support.html">الدعم</a>
+    </nav>
+
+    <div class="header-actions">
+      <button id="headerInstallBtn" class="icon-btn" title="تثبيت التطبيق" style="display:none"><svg viewBox="0 0 24 24" aria-hidden="true">
+  <path class="icon" d="M12 3v10m0 0l4-4m-4 4l-4-4M5 21h14"/>
+</svg></button>
+      <button id="menuBtn" class="icon-btn" title="القائمة"><svg viewBox="0 0 24 24" aria-hidden="true">
+  <path class="icon" d="M4 7h16M4 12h16M4 17h16"/>
+</svg></button>
+    </div>
+  </div>
+</header>
+
+<div id="drawerBackdrop" class="drawer-backdrop" aria-hidden="true"></div>
+<aside id="drawer" class="drawer" aria-label="القائمة الجانبية">
+  <div class="drawer-top">
+    <div class="brand" style="min-width:auto">
+      <div class="brand-mark" style="width:38px;height:38px"><svg viewBox="0 0 24 24" aria-hidden="true">
+  <path class="icon" d="M7 17c4-8 6-10 10-10M7 17c2 0 4 2 6 2 4 0 6-4 6-8"/>
+</svg></div>
+      <div class="brand-title">
+        <b>البرنامج</b>
+        <span>مجاني • يعمل كتطبيق</span>
+      </div>
+    </div>
+    <button id="drawerClose" class="icon-btn" title="إغلاق"><svg viewBox="0 0 24 24" aria-hidden="true">
+  <path class="icon" d="M4 7h16M4 12h16M4 17h16"/>
+</svg></button>
+  </div>
+
+  <a href="./index.html">الرئيسية</a>
+  <a href="./test.html">اختبار 50 سؤال</a>
+  <a href="./results.html">النتيجة والخطة</a>
+  <a href="./quiz.html">كويزات قابلة للمشاركة</a>
+  <a href="./progress.html">سجلّي</a>
+  <a href="./support.html">الدعم</a>
+
+  <small class="muted">ملاحظة: النتائج تُحفظ على جهازك فقط (بدون حسابات).</small>
+</aside>
+
+
+<main id="main" class="container">
+  <section id="wizard" class="card pad section">
+    <div class="section-title">
+      <h2>قبل نبدأ… خلّ الخطة تطلع لك بدقة 🎯</h2>
+      <span class="badge">البيانات تحفظ على جهازك فقط</span>
+    </div>
+
+    <div id="resumeBox" class="card pad" style="display:none; margin-top:10px; background:rgba(28,124,84,.08)">
+      <b>عندك محاولة غير مكتملة</b>
+      <div class="muted" style="margin-top:6px">تبغى تكملها؟</div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px">
+        <button id="resumeYes" class="btn small" type="button">نعم، كمل</button>
+        <button id="resumeNo" class="btn small secondary" type="button">لا، ابدأ من جديد</button>
+      </div>
+    </div>
+
+    <div id="cooldownBox" class="card pad" style="display:none; margin-top:10px; background:rgba(246,195,67,.14)">
+      <b>تنبيه</b>
+      <div id="cooldownText" class="muted" style="margin-top:6px"></div>
+      <div style="margin-top:10px">
+        <a class="btn small secondary" href="./quiz.html">سوي كويز الآن</a>
+      </div>
+    </div>
+
+    <div id="stepper" class="stepper" style="margin-top:14px"></div>
+
+    <!-- Step panes -->
+    <div class="section step-pane">
+      <div class="row-2">
+        <div class="field">
+          <div class="label">اسمك (اختياري)</div>
+          <input id="name" class="input" placeholder="مثال: خالد"/>
+          <div class="hint">نستخدم الاسم في الرسائل التحفيزية داخل الاختبار.</div>
+        </div>
+
+        <div class="field">
+          <div class="label">من وين سمعت عن البرنامج؟</div>
+          <div class="radio-list">
+            <label class="radio"><input type="radio" name="heardFrom" value="friend"/><div><b>صديق / توصية</b><small>أفضل مصدر 👍</small></div></label>
+            <label class="radio"><input type="radio" name="heardFrom" value="telegram"/><div><b>قروب/قناة</b><small>وصلني رابط مشاركة</small></div></label>
+            <label class="radio"><input type="radio" name="heardFrom" value="twitter"/><div><b>X / تويتر</b><small>من منشور أو اقتباس</small></div></label>
+            <label class="radio"><input type="radio" name="heardFrom" value="search"/><div><b>بحث</b><small>بحثت عن اختبار تحديد مستوى</small></div></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="label">هدفك الأساسي</div>
+        <div class="radio-list">
+          <label class="radio"><input type="radio" name="goal" value="university"/><div><b>قبول جامعة / تخصص</b><small>أحتاج درجة مناسبة للقبول</small></div></label>
+          <label class="radio"><input type="radio" name="goal" value="job"/><div><b>وظيفة / ترقية</b><small>أحتاج إثبات مستوى</small></div></label>
+          <label class="radio"><input type="radio" name="goal" value="self"/><div><b>تطوير ذاتي</b><small>أبي أرفع مستواي بشكل عام</small></div></label>
+        </div>
+      </div>
+
+      <div class="row-2">
+        <div class="field">
+          <div class="label">المنطقة (اختياري)</div>
+          <input id="region" class="input" placeholder="مثال: الرياض"/>
+          <div class="hint">لأجل نصائح عامة فقط (لا توجد مواعيد حجز داخل البرنامج).</div>
+        </div>
+
+        <div class="field">
+          <div class="label">الهدف من استخدام البرنامج الآن</div>
+          <div class="radio-list">
+            <label class="radio"><input type="radio" name="purpose" value="plan"/><div><b>أبي خطة + جدول مذاكرة</b><small>خلّ البرنامج يبني لي خطة كاملة</small></div></label>
+            <label class="radio"><input type="radio" name="purpose" value="measure"/><div><b>قياس مستوى فقط</b><small>أبي أعرف وين أنا واقف</small></div></label>
+            <label class="radio"><input type="radio" name="purpose" value="fast"/><div><b>تجهيز سريع</b><small>وقتي ضيق وأبي زبدة الزبدة</small></div></label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section step-pane" style="display:none">
+      <div class="field">
+        <div class="label">متى اختبارك؟</div>
+        <div class="radio-list">
+          <label class="radio"><input type="radio" name="examTimeline" value="lt24"/><div><b>خلال 24 ساعة</b><small>خطة إنقاذ + تركيز على الأضعف</small></div></label>
+          <label class="radio"><input type="radio" name="examTimeline" value="lt3d"/><div><b>خلال 3 أيام</b><small>كويزات مركّزة + مراجعة أخطاء</small></div></label>
+          <label class="radio"><input type="radio" name="examTimeline" value="lt7d"/><div><b>خلال أسبوع</b><small>خطة 7 أيام متوازنة</small></div></label>
+          <label class="radio"><input type="radio" name="examTimeline" value="lt30d"/><div><b>خلال شهر</b><small>خطة أسبوعين + نمط تكرار للأسبوعين التالية</small></div></label>
+          <label class="radio"><input type="radio" name="examTimeline" value="noBooking"/><div><b>لسه ما حجزت</b><small>خطة تأسيس 14 يوم + نصيحة للحجز</small></div></label>
+        </div>
+      </div>
+
+      <div class="row-2">
+        <div class="field">
+          <div class="label">كم وقت تقدر تذاكر يوميًا؟</div>
+          <div class="radio-list">
+            <label class="radio"><input type="radio" name="minutesPerDay" value="20"/><div><b>20 دقيقة</b><small>خطة خفيفة لكن مستمرة</small></div></label>
+            <label class="radio"><input type="radio" name="minutesPerDay" value="30"/><div><b>30 دقيقة</b><small>المثالي للالتزام</small></div></label>
+            <label class="radio"><input type="radio" name="minutesPerDay" value="45"/><div><b>45 دقيقة</b><small>جيد جدًا</small></div></label>
+            <label class="radio"><input type="radio" name="minutesPerDay" value="60"/><div><b>60 دقيقة</b><small>ممتاز</small></div></label>
+            <label class="radio"><input type="radio" name="minutesPerDay" value="90"/><div><b>90 دقيقة</b><small>تقدم سريع</small></div></label>
+            <label class="radio"><input type="radio" name="minutesPerDay" value="120"/><div><b>120 دقيقة</b><small>تسريع قوي</small></div></label>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="label">دوامك / وقتك اليومي</div>
+          <div class="radio-list">
+            <label class="radio"><input type="radio" name="workSchedule" value="morning"/><div><b>دوام صباحي</b><small>نعطيك اقتراح وقت مذاكرة مناسب</small></div></label>
+            <label class="radio"><input type="radio" name="workSchedule" value="evening"/><div><b>دوام مسائي</b><small>نركز على مذاكرة الصباح</small></div></label>
+            <label class="radio"><input type="radio" name="workSchedule" value="variable"/><div><b>متغير</b><small>نقترح خطة مرنة</small></div></label>
+            <label class="radio"><input type="radio" name="workSchedule" value="none"/><div><b>بدون دوام</b><small>نوزع الوقت على أكثر من جلسة</small></div></label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section step-pane" style="display:none">
+      <div class="row-2">
+        <div class="field">
+          <div class="label">الوقت المفضل للمذاكرة</div>
+          <div class="radio-list">
+            <label class="radio"><input type="radio" name="preferredTime" value="morning"/><div><b>صباح</b><small>أفضل تركيز عندي صباح</small></div></label>
+            <label class="radio"><input type="radio" name="preferredTime" value="afternoon"/><div><b>ظهر/عصر</b><small>أفضّل بعد الدوام</small></div></label>
+            <label class="radio"><input type="radio" name="preferredTime" value="evening"/><div><b>مساء</b><small>أرتاح بالمساء</small></div></label>
+            <label class="radio"><input type="radio" name="preferredTime" value="night"/><div><b>ليل</b><small>أذاكر آخر الليل</small></div></label>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="label">أسلوبك المفضل</div>
+          <div class="radio-list">
+            <label class="radio"><input type="radio" name="learningStyle" value="quizzes"/><div><b>كويزات + مراجعة أخطاء</b><small>أتعلم بالتطبيق المباشر</small></div></label>
+            <label class="radio"><input type="radio" name="learningStyle" value="reading"/><div><b>قراءة + تلخيص</b><small>أحب أفهم ثم ألخص</small></div></label>
+            <label class="radio"><input type="radio" name="learningStyle" value="mixed"/><div><b>متنوع</b><small>أبغى خليط حسب اليوم</small></div></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="label">وش تتوقع أضعف قسم عندك؟</div>
+        <div class="radio-list">
+          <label class="radio"><input type="radio" name="weakGuess" value="Grammar"/><div><b>قواعد (Grammar)</b><small>ألخبط في الأزمنة وترتيب الجملة</small></div></label>
+          <label class="radio"><input type="radio" name="weakGuess" value="Vocabulary"/><div><b>مفردات (Vocabulary)</b><small>تنقصني كلمات ومرادفات</small></div></label>
+          <label class="radio"><input type="radio" name="weakGuess" value="Reading"/><div><b>قراءة (Reading)</b><small>أتأخر في فهم القطعة</small></div></label>
+          <label class="radio"><input type="radio" name="weakGuess" value="Listening"/><div><b>استماع (Listening)</b><small>أضيع التفاصيل بسرعة</small></div></label>
+          <label class="radio"><input type="radio" name="weakGuess" value="auto"/><div><b>غير متأكد — خل الاختبار يحدد</b><small>أبي تحليل دقيق</small></div></label>
+        </div>
+      </div>
+    </div>
+
+    <div class="section step-pane" style="display:none">
+      <div class="row-2">
+        <div class="field">
+          <div class="label">هل قد اختبرت STEP قبل؟</div>
+          <div class="radio-list">
+            <label class="radio"><input type="radio" name="triedBefore" value="yes"/><div><b>نعم</b><small>عندي تجربة سابقة</small></div></label>
+            <label class="radio"><input type="radio" name="triedBefore" value="no"/><div><b>لا</b><small>أول مرة</small></div></label>
+          </div>
+        </div>
+
+        <div id="scoresBox" class="field" style="display:none">
+          <div class="label">درجتك السابقة والهدف (اختياري)</div>
+          <div class="row-2">
+            <input id="previousScore" class="input" inputmode="numeric" placeholder="درجتي السابقة (مثال: 55)"/>
+            <input id="targetScore" class="input" inputmode="numeric" placeholder="هدفي (مثال: 75)"/>
+          </div>
+          <div class="hint">هذه للتوجيه فقط — الموقع يعطي مؤشر تدريبي وليس درجة رسمية.</div>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="label">مرحلتك الحالية</div>
+        <div class="radio-list">
+          <label class="radio"><input type="radio" name="educationStage" value="school"/><div><b>متوسط/ثانوي</b><small>أحتاج خطة تناسب المدرسة</small></div></label>
+          <label class="radio"><input type="radio" name="educationStage" value="university"/><div><b>جامعة</b><small>عندي ضغط مواد</small></div></label>
+          <label class="radio"><input type="radio" name="educationStage" value="graduate"/><div><b>خريج</b><small>أبي رفع المستوى للعمل</small></div></label>
+          <label class="radio"><input type="radio" name="educationStage" value="employee"/><div><b>موظف</b><small>وقتي محدود</small></div></label>
+        </div>
+      </div>
+
+      <div id="uniBox" class="card pad" style="display:none">
+        <div class="row-2">
+          <div class="field">
+            <div class="label">تفاصيل الجامعة (اختياري)</div>
+            <input id="uniDetails" class="input" placeholder="مثال: سنة ثالثة"/>
+          </div>
+          <div class="field">
+            <div class="label">التخصص (اختياري)</div>
+            <input id="major" class="input" placeholder="مثال: هندسة"/>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="label">تجاربك السابقة (اختياري)</div>
+        <div class="hint">اختر فقط اللي سبق جرّبته — الهدف نفهم احتياجك.</div>
+        <div class="pills">
+          <label class="pill" aria-pressed="false">
+            <input type="checkbox" name="previousCourses" value="ayed" style="display:none"/> جربت برنامج/دورة عايد سابقًا
+          </label>
+          <label class="pill" aria-pressed="false">
+            <input type="checkbox" name="previousCourses" value="comprehensive" style="display:none"/> جربت دورة شاملة (أي جهة)
+          </label>
+          <label class="pill" aria-pressed="false">
+            <input type="checkbox" name="previousCourses" value="initiative" style="display:none"/> جربت مبادرة/معسكر
+          </label>
+          <label class="pill" aria-pressed="false">
+            <input type="checkbox" name="previousCourses" value="otherPlatform" style="display:none"/> جربت منصة أخرى
+          </label>
+          <label class="pill" aria-pressed="false">
+            <input type="checkbox" name="previousCourses" value="none" style="display:none"/> ما جربت شيء
+          </label>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="label">وش أكبر تحدي تواجهه الآن؟ (اختياري)</div>
+        <textarea id="coursePain" placeholder="مثال: أتشتت بين المصادر / ما عندي جدول ثابت / ما أعرف أبدأ من وين…"></textarea>
+      </div>
+
+      <div class="field">
+        <div class="label">ملاحظات إضافية (اختياري)</div>
+        <textarea id="notes" placeholder="أي شيء تحب البرنامج يعرفه عنك…"></textarea>
+      </div>
+    </div>
+
+    <div class="section step-pane" style="display:none">
+      <div class="card pad" style="background:rgba(28,124,84,.08)">
+        <b>إعدادات الاختبار</b>
+        <div class="muted" style="margin-top:6px; line-height:1.8">
+          تقدر توقف التصحيح الفوري أو الشرح إذا تبغى تركّز بدون تشتيت — وتقدر ترجع تفعّلهم لاحقًا.
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
+          <label class="toggle"><input id="toggleInstantWizard" type="checkbox" checked/>تصحيح فوري</label>
+          <label class="toggle"><input id="toggleExplainWizard" type="checkbox" checked/>إظهار الشرح</label>
+        </div>
+      </div>
+
+      <div class="card pad" style="margin-top:12px">
+        <b>ملاحظة مهمة</b>
+        <div class="muted" style="margin-top:6px; line-height:1.8">
+          هذا اختبار تدريبي (مؤشر مستوى). ليس درجة رسمية. الهدف: تدريبك + بناء خطة عملية.
+        </div>
+      </div>
+    </div>
+
+    <div class="test-controls" style="margin-top:14px">
+      <button id="prevStep" class="btn secondary" type="button">السابق</button>
+      <button id="nextStep" class="btn secondary" type="button">التالي</button>
+      <button id="startTestBtn" class="btn" type="button">ابدأ الاختبار الآن</button>
+    </div>
+  </section>
+
+  <!-- Test shell -->
+  <section id="testShell" class="test-shell section" style="display:none">
+    <div class="card pad">
+      <div class="section-title">
+        <h2>الاختبار الآن</h2>
+        <span class="badge">تقدر تروح لأي سؤال من الشبكة</span>
+      </div>
+      <div class="progress" aria-label="شريط التقدم"><div id="progressBarInner"></div></div>
+      <div class="test-controls" style="margin-top:12px">
+        <label class="toggle"><input id="toggleInstantTest" type="checkbox" checked/>تصحيح فوري</label>
+        <label class="toggle"><input id="toggleExplainTest" type="checkbox" checked/>إظهار الشرح</label>
+        <span class="badge">أغلق الإشعارات تلقائيًا داخل صفحة الاختبار</span>
+      </div>
+    </div>
+
+    <div class="card qcard">
+      <div id="qMeta" class="qmeta"></div>
+      <p id="qPrompt" class="qprompt"></p>
+      <div id="optionsWrap" class="options" role="list"></div>
+
+      <div id="feedback" class="feedback" aria-live="polite">
+        <p id="fbTitle" class="title"></p>
+        <p id="fbDesc" class="desc"></p>
+      </div>
+
+      <div class="test-controls" style="margin-top:12px">
+        <button id="prevQBtn" class="btn secondary" type="button">السابق</button>
+        <div style="display:flex; gap:10px; align-items:center">
+          <button id="finishBtn" class="btn" type="button" style="display:none">إنهاء وحفظ النتيجة</button>
+          <button id="nextQBtn" class="btn" type="button">التالي</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card qnav">
+      <div class="section-title">
+        <h2>خريطة الأسئلة</h2>
+        <span class="badge">أخضر = مجاوب • أحمر = خطأ (إذا كان التصحيح الفوري شغال)</span>
+      </div>
+      <div id="qNavGrid" class="qnav-grid"></div>
+    </div>
+  </section>
+</main>
+
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <b>أكاديمية عايد الرسمية — برنامج تحديد مستوى STEP</b>
+      <div class="muted" style="margin-top:8px; line-height:1.8">
+        برنامج مجاني يساعدك تحدد مستواك وتطلع بخطة وجدول مذاكرة جاهز.
+        النتائج تُحفظ على جهازك فقط (بدون إنشاء حساب).
+      </div>
+      <div class="muted" style="margin-top:10px">© <span id="year"></span></div>
+    </div>
+    <div>
+      <div class="footer-links">
+        <a href="./quiz.html">كويزات</a>
+        <a href="./progress.html">سجلّي</a>
+        <a href="./support.html">الدعم</a>
+        <a href="./privacy.html">الخصوصية</a>
+        <a href="./terms.html">الشروط</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<div id="toastWrap" class="toast-wrap" aria-live="polite" aria-atomic="true">
+  <div id="toastBox" class="toast" role="status">
+    <div>
+      <p id="toastText" class="t">...</p>
+    </div>
+    <div class="x">
+      <button id="toastClose" type="button" aria-label="إغلاق">✕</button>
+    </div>
+  </div>
+</div>
+
+
+<div id="installBanner" class="install">
+  <div class="inner">
+    <div>
+      <p>ثبّت البرنامج كتطبيق ✅</p>
+      <small>يشتغل بدون متصفح ويصير أسرع.</small>
+    </div>
+    <div style="display:flex; gap:8px; align-items:center">
+      <button id="installBtn" class="btn small" type="button">تثبيت</button>
+      <button id="installClose" class="btn small ghost" type="button">لاحقًا</button>
+    </div>
+  </div>
+</div>
+
+
+<button id="assistBtn" class="assist-btn" aria-label="فتح المساعد"><svg viewBox="0 0 24 24" aria-hidden="true">
+  <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.4 0-2.8-.3-4-.8L3 21l1.9-5.5c-.5-1.2-.9-2.5-.9-4A8.5 8.5 0 0 1 12.5 3 8.5 8.5 0 0 1 21 11.5Z"/>
+</svg></button>
+
+<section id="chat" class="chat" aria-label="مساعد أكاديمية عايد">
+  <div class="chat-head">
+    <div class="info">
+      <div class="logo"><svg viewBox="0 0 24 24" aria-hidden="true">
+  <path class="icon" d="M7 17c4-8 6-10 10-10M7 17c2 0 4 2 6 2 4 0 6-4 6-8"/>
+</svg></div>
+      <div>
+        <b>مساعد أكاديمية عايد</b>
+        <small id="chatSubtitle">متصل الآن</small>
+      </div>
+    </div>
+    <button id="chatClose" class="icon-btn" title="إغلاق" aria-label="إغلاق">✕</button>
+  </div>
+  <div id="chatBody" class="chat-body"></div>
+  <div class="chat-foot">
+    <input id="chatInput" type="text" placeholder="اكتب سؤالك هنا…"/>
+    <button id="chatSend" class="btn small" type="button">إرسال</button>
+  </div>
+</section>
+
+
+
+<script src="./assets/site-data.js"></script>
+<script src="./assets/app.js"></script>
+
+<script src="./assets/test.js"></script>
+<script>
+// Pills pressed state
+document.addEventListener("click", (e)=>{
+  const pill = e.target.closest(".pill");
+  if(!pill) return;
+  const input = pill.querySelector("input");
+  if(!input) return;
+  input.checked = !input.checked;
+  pill.setAttribute("aria-pressed", input.checked ? "true" : "false");
+});
+</script>
+</body>
+</html>

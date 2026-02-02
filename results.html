@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<title>نتيجتي وخطتي | أكاديمية عايد الرسمية</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="theme-color" content="#F6C343"/>
+  <meta name="description" content="اعرف مستواك + تحليل الأقسام + خطة وجدول مذاكرة PDF قابل للتحميل والمشاركة."/>
+  <meta property="og:title" content="النتيجة والخطة — برنامج تحديد مستوى STEP"/>
+  <meta property="og:description" content="اعرف مستواك + تحليل الأقسام + خطة وجدول مذاكرة PDF قابل للتحميل والمشاركة."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image" content="./assets/icon-512.png"/>
+  <link rel="manifest" href="./manifest.json"/>
+  <link rel="icon" type="image/png" href="./assets/icon-192.png"/>
+  <link rel="apple-touch-icon" href="./assets/icon-192.png"/>
+  <link rel="stylesheet" href="./assets/styles.css"/>
+
+</head>
+<body data-page="results">
+<a class="skip-link" href="#main">تخطي إلى المحتوى</a>
+
+<header class="header">
+  <div class="container header-inner">
+    <a class="brand" href="./index.html" aria-label="العودة للرئيسية">
+      <div class="brand-mark"><svg viewBox="0 0 24 24" aria-hidden="true">
+  <path class="icon" d="M7 17c4-8 6-10 10-10M7 17c2 0 4 2 6 2 4 0 6-4 6-8"/>
+</svg></div>
+      <div class="brand-title">
+        <b>أكاديمية عايد الرسمية</b>
+        <span>برنامج تحديد مستوى STEP</span>
+      </div>
+    </a>
+
+    <nav class="nav" aria-label="روابط الموقع">
+      <a data-nav href="./index.html">الرئيسية</a>
+      <a data-nav href="./test.html">اختبار 50 سؤال</a>
+      <a data-nav href="./results.html">النتيجة والخطة</a>
+      <a data-nav href="./quiz.html">كويزات</a>
+      <a data-nav href="./support.html">الدعم</a>
+    </nav>
+
+    <div class="header-actions">
+      <button id="headerInstallBtn" class="icon-btn" title="تثبيت التطبيق" style="display:none"><svg viewBox="0 0 24 24" aria-hidden="true">
+  <path class="icon" d="M12 3v10m0 0l4-4m-4 4l-4-4M5 21h14"/>
+</svg></button>
+      <button id="menuBtn" class="icon-btn" title="القائمة"><svg viewBox="0 0 24 24" aria-hidden="true">
+  <path class="icon" d="M4 7h16M4 12h16M4 17h16"/>
+</svg></button>
+    </div>
+  </div>
+</header>
+
+<div id="drawerBackdrop" class="drawer-backdrop" aria-hidden="true"></div>
+<aside id="drawer" class="drawer" aria-label="القائمة الجانبية">
+  <div class="drawer-top">
+    <div class="brand" style="min-width:auto">
+      <div class="brand-mark" style="width:38px;height:38px"><svg viewBox="0 0 24 24" aria-hidden="true">
+  <path class="icon" d="M7 17c4-8 6-10 10-10M7 17c2 0 4 2 6 2 4 0 6-4 6-8"/>
+</svg></div>
+      <div class="brand-title">
+        <b>البرنامج</b>
+        <span>مجاني • يعمل كتطبيق</span>
+      </div>
+    </div>
+    <button id="drawerClose" class="icon-btn" title="إغلاق"><svg viewBox="0 0 24 24" aria-hidden="true">
+  <path class="icon" d="M4 7h16M4 12h16M4 17h16"/>
+</svg></button>
+  </div>
+
+  <a href="./index.html">الرئيسية</a>
+  <a href="./test.html">اختبار 50 سؤال</a>
+  <a href="./results.html">النتيجة والخطة</a>
+  <a href="./quiz.html">كويزات قابلة للمشاركة</a>
+  <a href="./progress.html">سجلّي</a>
+  <a href="./support.html">الدعم</a>
+
+  <small class="muted">ملاحظة: النتائج تُحفظ على جهازك فقط (بدون حسابات).</small>
+</aside>
+
+
+<main id="main" class="container">
+  <section id="noResult" class="card pad section" style="display:none">
+    <h1 style="margin:0 0 8px">ما لقينا نتيجة محفوظة</h1>
+    <p class="muted" style="margin:0; line-height:1.8">
+      يبدو أنك ما سويت الاختبار الكامل في هذا الجهاز، أو مسحت البيانات.
+    </p>
+    <div class="hero-actions" style="margin-top:14px">
+      <a class="btn" href="./test.html">ابدأ اختبار 50 سؤال</a>
+      <a class="btn secondary" href="./quiz.html">سوي كويز</a>
+    </div>
+  </section>
+
+  <div id="resultWrap">
+    <nav class="subnav">
+      <div class="card subnav-inner">
+        <a href="#summary">الملخص</a>
+        <a href="#analysis">تحليل الأقسام</a>
+        <a href="#plan">الخطة</a>
+        <a href="#schedule">الجدول</a>
+        <a href="#share">مشاركة</a>
+      </div>
+    </nav>
+
+    <section id="summary" class="card pad section">
+      <div class="section-title">
+        <h2>ملخص نتيجتك</h2>
+        <span class="badge">مؤشر تدريبي • يحفظ على جهازك</span>
+      </div>
+      <div class="row-2">
+        <div class="card pad">
+          <b>الاسم</b>
+          <div id="rName" style="margin-top:6px; font-weight:900; font-size:16px">—</div>
+          <div class="muted" id="rDate" style="margin-top:6px">—</div>
+        </div>
+        <div class="card pad">
+          <b>المؤشر العام</b>
+          <div style="display:flex; gap:10px; align-items:center; margin-top:8px; flex-wrap:wrap">
+            <span class="badge"><span class="dot"></span><span id="rLevel">—</span></span>
+            <span class="badge">النتيجة: <b id="rPct">—</b></span>
+          </div>
+          <div class="muted" style="margin-top:10px; line-height:1.8">
+            ملاحظة: النتيجة هنا تدريبية (مؤشر مستوى) وليست درجة رسمية.
+          </div>
+        </div>
+      </div>
+
+      <div class="card pad" style="margin-top:12px; background:rgba(246,195,67,.12)">
+        <b>خلاصة التحليل</b>
+        <div id="focusText" class="muted" style="margin-top:6px; line-height:1.8">—</div>
+      </div>
+    </section>
+
+    <section id="analysis" class="section">
+      <div class="section-title">
+        <h2>تحليل الأقسام</h2>
+        <span class="badge">نسبة كل قسم</span>
+      </div>
+      <div id="bars" class="stat-row"></div>
+    </section>
+
+    <section id="plan" class="card pad section">
+      <div class="section-title">
+        <h2>الخطة المقترحة</h2>
+        <span class="badge" id="timelineTitle">—</span>
+      </div>
+
+      <div class="card pad" style="background:rgba(28,124,84,.08)">
+        <b>نصيحة مهمة حسب موعدك</b>
+        <div id="bookingAdvice" class="muted" style="margin-top:6px; line-height:1.8">—</div>
+      </div>
+
+      <div id="extraBox" class="card pad" style="display:none; margin-top:12px; background:rgba(11,18,32,.04)">
+        <b>موارد إضافية</b>
+        <div class="muted" style="margin-top:6px">اختياري — إذا فعلتها من الإعدادات.</div>
+        <div style="margin-top:10px">
+          <button id="extraBtn" class="btn small secondary" type="button">فتح الموارد</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="schedule" class="card pad section">
+      <div class="section-title">
+        <h2>جدول مذاكرة جاهز</h2>
+        <span class="badge" id="scheduleSummary">—</span>
+      </div>
+
+      <div style="overflow:auto">
+        <table class="table" aria-label="جدول المذاكرة">
+          <thead>
+            <tr>
+              <th style="width:120px">اليوم</th>
+              <th>المهام</th>
+            </tr>
+          </thead>
+          <tbody id="scheduleBody"></tbody>
+        </table>
+      </div>
+
+      <div class="hero-actions" style="margin-top:12px">
+        <button id="weakQuizBtn" class="btn secondary" type="button">سوي كويز للأضعف</button>
+        <button id="pdfBtn" class="btn" type="button">تحميل PDF (طباعة)</button>
+      </div>
+    </section>
+
+    <section id="share" class="card pad section">
+      <div class="section-title">
+        <h2>مشاركة (تسويق محترم)</h2>
+        <span class="badge">رسائل جاهزة</span>
+      </div>
+      <p class="muted" style="margin:0; line-height:1.8">
+        تقدر تشارك خطتك أو تنسخها… بدون أي روابط دورات — فقط رابط البرنامج.
+      </p>
+
+      <div class="hero-actions" style="margin-top:12px">
+        <button id="sharePlanBtn" class="btn" type="button">شارك خطتي برسالة جاهزة</button>
+        <button id="copyPlanBtn" class="btn secondary" type="button">نسخ مختصر الخطة</button>
+      </div>
+
+      <div class="card pad" style="margin-top:12px; background:rgba(11,18,32,.04)">
+        <b>معلومة</b>
+        <div class="muted" style="margin-top:6px; line-height:1.8">
+          إذا فتحت الخطة PDF من الكمبيوتر: اختر Print → Save as PDF.
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <b>أكاديمية عايد الرسمية — برنامج تحديد مستوى STEP</b>
+      <div class="muted" style="margin-top:8px; line-height:1.8">
+        برنامج مجاني يساعدك تحدد مستواك وتطلع بخطة وجدول مذاكرة جاهز.
+        النتائج تُحفظ على جهازك فقط (بدون إنشاء حساب).
+      </div>
+      <div class="muted" style="margin-top:10px">© <span id="year"></span></div>
+    </div>
+    <div>
+      <div class="footer-links">
+        <a href="./quiz.html">كويزات</a>
+        <a href="./progress.html">سجلّي</a>
+        <a href="./support.html">الدعم</a>
+        <a href="./privacy.html">الخصوصية</a>
+        <a href="./terms.html">الشروط</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<div id="toastWrap" class="toast-wrap" aria-live="polite" aria-atomic="true">
+  <div id="toastBox" class="toast" role="status">
+    <div>
+      <p id="toastText" class="t">...</p>
+    </div>
+    <div class="x">
+      <button id="toastClose" type="button" aria-label="إغلاق">✕</button>
+    </div>
+  </div>
+</div>
+
+
+<div id="installBanner" class="install">
+  <div class="inner">
+    <div>
+      <p>ثبّت البرنامج كتطبيق ✅</p>
+      <small>يشتغل بدون متصفح ويصير أسرع.</small>
+    </div>
+    <div style="display:flex; gap:8px; align-items:center">
+      <button id="installBtn" class="btn small" type="button">تثبيت</button>
+      <button id="installClose" class="btn small ghost" type="button">لاحقًا</button>
+    </div>
+  </div>
+</div>
+
+
+<button id="assistBtn" class="assist-btn" aria-label="فتح المساعد"><svg viewBox="0 0 24 24" aria-hidden="true">
+  <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.4 0-2.8-.3-4-.8L3 21l1.9-5.5c-.5-1.2-.9-2.5-.9-4A8.5 8.5 0 0 1 12.5 3 8.5 8.5 0 0 1 21 11.5Z"/>
+</svg></button>
+
+<section id="chat" class="chat" aria-label="مساعد أكاديمية عايد">
+  <div class="chat-head">
+    <div class="info">
+      <div class="logo"><svg viewBox="0 0 24 24" aria-hidden="true">
+  <path class="icon" d="M7 17c4-8 6-10 10-10M7 17c2 0 4 2 6 2 4 0 6-4 6-8"/>
+</svg></div>
+      <div>
+        <b>مساعد أكاديمية عايد</b>
+        <small id="chatSubtitle">متصل الآن</small>
+      </div>
+    </div>
+    <button id="chatClose" class="icon-btn" title="إغلاق" aria-label="إغلاق">✕</button>
+  </div>
+  <div id="chatBody" class="chat-body"></div>
+  <div class="chat-foot">
+    <input id="chatInput" type="text" placeholder="اكتب سؤالك هنا…"/>
+    <button id="chatSend" class="btn small" type="button">إرسال</button>
+  </div>
+</section>
+
+
+
+<script src="./assets/site-data.js"></script>
+<script src="./assets/app.js"></script>
+
+<script src="./assets/results.js"></script>
+</body>
+</html>
